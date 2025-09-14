@@ -57,3 +57,11 @@ docker run -p 3000:80 react-app
 
 
 The app will be accessible at http://localhost:3000
+
+## Note: Testing lighthouse score 
+
+To test lighthouse score please run in docker 
+Go to docker-compose folder
+then run ./start-frontend.sh
+
+The app will be accessible at http://localhost:3000

@@ -29,3 +29,11 @@ The website has been tested using **Google Lighthouse** on both **desktop** and 
 This demonstrates that the website meets top industry standards for web performance, user experience, and accessibility.
 
 ---
+
+## Note: Testing lighthouse score 
+
+To test lighthouse score please run in docker 
+Go to docker-compose folder
+then run ./start-frontend.sh
+
+The app will be accessible at http://localhost:3000
