@@ -1,12 +1,11 @@
 #!/bin/bash
+echo "🎨 Building and starting Frontend Engineer Services..."
 
-echo "🎨 Starting Frontend Engineer Services..."
+# Build React app only
+docker-compose -f base.yml -f frontend.yml build react-app
 
-# Start base services first
-docker-compose -f base.yml up -d
-
-# Start frontend-specific services
-docker-compose -f frontend.yml up -d
+# Start all services (base + frontend) in detached mode
+docker-compose -f base.yml -f frontend.yml up -d
 
 echo "✅ Frontend services started!"
 echo "📊 Available services:"
@@ -16,7 +15,8 @@ echo "  - Memcached: localhost:11211"
 echo "  - Selenium Hub: localhost:4444"
 echo "  - Chrome Node: Available via Selenium Hub"
 echo "  - Firefox Node: Available via Selenium Hub"
+echo "  - React App: localhost:3000"
 
 echo ""
 echo "🔧 To stop: docker-compose -f base.yml -f frontend.yml down"
-echo "📝 To view logs: docker-compose -f base.yml -f frontend.yml logs -f [service]" 
+echo "📝 To view logs: docker-compose -f base.yml -f frontend.yml logs -f [service]"
